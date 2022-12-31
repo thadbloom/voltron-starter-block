@@ -1,15 +1,17 @@
 # ⚡️ Voltron Starter Block ⚡️
 Experimental starter block scaffolded with [Create Block](https://www.npmjs.com/package/@wordpress/create-block) tool.
 
-## Install
+---
+
+## **Install**
 
 ```
 npm install
 ```
 
-## Develop
+## **Develop**
 
-### Start local wp instance using [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) (requires [Docker](https://www.docker.com/))
+### Start local wp instance using [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) *(requires [Docker](https://www.docker.com/))*
 ```
 npm run wp-env start
 ```
@@ -19,7 +21,7 @@ npm run wp-env start
 npm start
 ```
 
-## Deploy
+## **Deploy**
 
 ### Creates production build
 ```
