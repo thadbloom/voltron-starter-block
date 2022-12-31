@@ -1,0 +1,77 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "voltron-block/voltron-starter-block",
+	"version": "0.1.0",
+	"title": "Voltron",
+	"category": "design",
+	"icon": "wordpress-alt",
+	"description": "Example block scaffolded with Create Block tool.",
+	"keywords": [ 
+		"voltron", 
+		"starter" 
+	],
+	"supports": {
+		"html": false
+	},
+	"textdomain": "voltron-starter-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		},
+		{
+			"name": "border",
+			"label": "Border"
+		}
+	],
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": "h2",
+			"default": "Hello. 🤠"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p",
+			"default": "My name is Billy Blocks."
+		},
+		"align": {
+			"type": "string",
+			"default": "none"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},	 
+		"textColor": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"buttonColor": {
+			"type": "string"
+		},
+		"buttonTextColor": {
+			"type": "string"
+		},
+		"extLink": {
+			"type": "string",
+			"default": "https://thadbloom.com"
+		},
+		"linkLabel": {
+			"type": "string",
+			"default": "Visit Billy Blocks' Chicken Emporium!"
+		},
+		"hasLinkNofollow": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

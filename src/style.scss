@@ -1,0 +1,111 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+:root {
+  --border-radius: 0.75rem;
+  --gradient-color-1: #59d102;
+  --gradient-color-2: #f3f520;
+}
+
+.wp-block-voltron-block-voltron-starter-block {
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  padding: 3.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--border-radius);
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, var(--gradient-color-1) 0%, var(--gradient-color-2) 100% );
+    transform: translate3d(0px, 20px, 0) scale(0.95);
+    filter: blur(20px);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+  }
+
+  * {
+    box-sizing: inherit;
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
+  }
+  
+  + .wp-block-voltron-block-voltron-starter-block {
+    margin-top: 0.625rem;
+  }
+
+  &.is-style-default {
+    border: 0;
+  }
+
+  &.is-style-border {
+    border: 0.0625rem solid #000;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  p,
+  .button {
+    color: inherit;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.6875rem;
+
+    + .button {
+      margin-top: 1rem;
+    }
+
+  }
+
+
+  .button {
+    text-align: center;
+    display: inline-block;
+    font-size: 1.25rem;
+    letter-spacing: 0.09375rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    transition: transform 250ms cubic-bezier(.2,-1,.8,1);
+    &:hover,
+    &:focus {
+      transform: scale(1.025);
+    }
+
+  }
+
+
+
+}
