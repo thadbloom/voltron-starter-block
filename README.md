@@ -1,6 +1,9 @@
 # ⚡️ Voltron Starter Block ⚡️
+
 Experimental [WordPress](https://wordpress.org) starter [block](https://developer.wordpress.org/block-editor/) scaffolded with [Create Block](https://www.npmjs.com/package/@wordpress/create-block) tool.
+
 ---
+
 ## Install
 Install local dependencies. Tested with Node v18.1.0
 ```
