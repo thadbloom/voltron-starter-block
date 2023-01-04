@@ -6,6 +6,7 @@
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
+
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -17,7 +18,10 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  */
 export default function save( { attributes } ) {
   
-  const { heading, content, align, backgroundColor, borderColor, buttonColor, buttonTextColor, textColor, extLink, linkLabel, hasLinkNofollow } = attributes;
+  const { 
+    heading, content, align, 
+    backgroundColor, borderColor, buttonColor, buttonTextColor, textColor, 
+    extLink, linkLabel, hasLinkNofollow } = attributes;
 
   const blockProps = useBlockProps.save( {
     className: `has-text-align-${ align }`
@@ -32,6 +36,7 @@ export default function save( { attributes } ) {
         borderColor: borderColor
       } }
     >
+      
       <div>
         <RichText.Content 
           tagName="h2" 
@@ -44,7 +49,7 @@ export default function save( { attributes } ) {
         <a 
           { ...blockProps }
           href={ extLink }
-          className="button button--volt"
+          className="button btn-voltron"
           rel={ hasLinkNofollow ? "nofollow" : "noopener noreferrer" }
           style={ {
             color: buttonTextColor,
@@ -52,8 +57,9 @@ export default function save( { attributes } ) {
           } }
         >
           { linkLabel }
-        </a>
+        </a>        
       </div>
+ 
     </div>
   );
 }

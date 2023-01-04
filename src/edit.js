@@ -17,7 +17,7 @@ import {
   AlignmentControl, 
   BlockControls,
   InspectorControls,
-  PanelColorSettings 
+  PanelColorSettings,
 } from '@wordpress/block-editor';
 import {
   TextControl,
@@ -45,9 +45,17 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } ) {
   
+  /**
+   * All the goodies that will make up our block data
+   */
+
   const blockProps = useBlockProps();
-  const { heading, content, align, backgroundColor, borderColor, textColor, buttonColor, buttonTextColor, extLink, linkLabel, hasLinkNofollow } = attributes;
+  const { 
+    heading, content, align, 
+    backgroundColor, borderColor, textColor, buttonColor, buttonTextColor, 
+    extLink, linkLabel, hasLinkNofollow } = attributes;
   
+
   /**
    * Rich text content event handler
    */
@@ -67,7 +75,7 @@ export default function Edit( { attributes, setAttributes } ) {
       align: newAlign === undefined ? 'none' : newAlign, 
     } )
   }
-
+  
   /**
    * Color event handlers
    */
@@ -110,7 +118,7 @@ export default function Edit( { attributes, setAttributes } ) {
   return (
     <>
       <InspectorControls>
-        <PanelColorSettings 
+        <PanelColorSettings // Example color settings panel
           title={ __( 'Color settings', 'voltron-starter-block' ) }
           initialOpen={ false }
           colorSettings={ [
@@ -141,8 +149,8 @@ export default function Edit( { attributes, setAttributes } ) {
             }
           ] }
         />
-        <PanelBody 
-            title={ __( 'Link settings' )}
+        <PanelBody // Panel body, Panel row -- w/ text field example
+            title={ __( 'Link settings', 'voltron-starter-block' )}
             initialOpen={true}
           >
           <PanelRow>
@@ -167,7 +175,7 @@ export default function Edit( { attributes, setAttributes } ) {
             </PanelRow>
             <PanelRow>
               <fieldset>
-                <ToggleControl
+                <ToggleControl // Toggle control example
                   label="Add rel = nofollow"
                   help={
                     hasLinkNofollow
@@ -184,11 +192,13 @@ export default function Edit( { attributes, setAttributes } ) {
       </InspectorControls>
 
       <BlockControls>
-        <AlignmentControl
+        <AlignmentControl // Alignment control example
           value={ { textAlign: align } }
           onChange={ onChangeAlign }
         />
       </BlockControls>
+
+
 
       <div { ...blockProps }
         style={ { 
@@ -199,13 +209,17 @@ export default function Edit( { attributes, setAttributes } ) {
           borderColor: borderColor, 
         } } 
       >
+
         <div>
           <RichText 
-            tagName="h2" // the editable HTML element
-            onChange={ onChangeHeading } // event handler called when el's content changes
-            allowedFormats={ [ 'core/bold', 'core/italic' ] } // an array of allowed formats
-            value={ attributes.heading } //  HTML string to make editable
-            placeholder={ __( 'Hello. 🤠' ) } // placeholder text
+            tagName="h2" // Editable HTML element
+            onChange={ onChangeHeading }                       // Event handler called when el's content changes
+            allowedFormats={ [ 'core/bold', 'core/italic' ] }  // Array of allowed formats
+            value={ attributes.heading }                       // HTML string to make editable
+            placeholder={ __( 'Hello. 🤠' ) }                  // Placeholder text
+            style={ {
+              color: textColor,
+            } }
           />
           <RichText 
             tagName="p" // the editable HTML element
@@ -217,7 +231,7 @@ export default function Edit( { attributes, setAttributes } ) {
           <ExternalLink 
               { ...blockProps }
               href={ extLink }
-              className="button button--volt"
+              className="button btn-voltron"
               rel={ hasLinkNofollow ? "nofollow" : "" }
               style={ { 
                 color: buttonTextColor,
@@ -227,6 +241,7 @@ export default function Edit( { attributes, setAttributes } ) {
                 { linkLabel }
             </ExternalLink>
         </div>
+
       </div>
 
     </>

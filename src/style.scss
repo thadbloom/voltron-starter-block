@@ -1,4 +1,6 @@
 /**
+ * Block styles
+ *
  * The following styles get applied both on the front of your site
  * and in the editor.
  */
@@ -9,14 +11,24 @@
   --gradient-color-2: #f3f520;
 }
 
+.wp-block-voltron-block-voltron-starter-container-block {
+  border: 1px solid  rgba(palegreen,0.35);
+  border-radius: var(--border-radius);
+
+  .wp-block-image > img  {
+    border-radius: var(--border-radius);
+  }
+
+}
+
 .wp-block-voltron-block-voltron-starter-block {
   position: relative;
   z-index: 0;
   box-sizing: border-box;
-  padding: 3.125rem;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 1.875rem;
   border-radius: var(--border-radius);
+  max-width: none;
+
 
   &::before {
     content: "";
@@ -72,6 +84,7 @@
     font-size: 3rem;
   }
 
+  h2,
   p,
   .button {
     color: inherit;
@@ -87,6 +100,13 @@
 
   }
 
+  img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+
 
   .button {
     text-align: center;
@@ -99,6 +119,7 @@
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
     transition: transform 250ms cubic-bezier(.2,-1,.8,1);
+    
     &:hover,
     &:focus {
       transform: scale(1.025);
