@@ -6,11 +6,13 @@ Experimental [WordPress](https://wordpress.org) starter [block](https://develope
 
 ## Install ✨
 
-Install local dependencies. *Tested with Node v18.1.0.*
+If you want to use wp-env for local development, it must be installed globabally on your machine:
 
-```
-npm install
-```
+`npm -g i @wordpress/env`
+
+Install local dependencies:
+
+`npm install`
 
 ## Develop 🔮
 
@@ -19,26 +21,18 @@ npm install
 Start local wp instance using [wp-env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) *(requires [Docker](https://www.docker.com))*
 By default wp-env uses port 8888, the local environment will be available at [localhost:8888](http://localhost:8888)
 
-```
-wp-env start
-```
+`wp-env start`
 
 Stop local wp instance
 
-```
-wp-env stop
-```
+`wp-env stop`
 
 #### Development build process
 
-```
-npm start
-```
+`npm start`
 
 ## Deploy 💎
 
 Create production build
 
-```
-npm build
-```
+`npm build`
